@@ -21,7 +21,7 @@ package screens
 		private var balls:Array = [];
 		private var paddles:Array = [];
 		private var scoreboard:Scoreboard;
-		static public const GAME_OVER:String = "game over";
+		static public const GAME_OVER:String = "test";
 		static public const BALL_BOUNCE:String = "ballBounce";
 		public function GameScreen() 
 		{
