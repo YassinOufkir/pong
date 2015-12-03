@@ -8,14 +8,14 @@ package screens
 	 */
 	public class Screen extends MovieClip
 	{
-		[Embed(source = "../../lib/starjedi/Starjedi.ttf",
-		fontName = "jedi", 
+		[Embed(source = "../../lib/font/a-space.otf",
+		fontName = "a-space", 
 		mimeType = "application/x-font", 
 		fontWeight="normal", 
 		fontStyle="normal", 		
 		advancedAntiAliasing="true", 
 		embedAsCFF = "false")]		
-		private var JediFont:Class;
+		private var aspace:Class;
 		
 		protected var textFormat:TextFormat;
 		protected var subFormat:TextFormat;
@@ -25,18 +25,18 @@ package screens
 		public function Screen() 
 		{
 			textFormat = new TextFormat();
-			textFormat.font = "jedi";
+			textFormat.font = "a-space";
 			textFormat.size = 60;
 			textFormat.color = 0xffffff;
 			
 			
 			subFormat = new TextFormat();
-			subFormat.font = "jedi";
+			subFormat.font = "a-space";
 			subFormat.size = 20;
 			subFormat.color = 0xff0000;
 			
 			scoreFormat = new TextFormat();
-			scoreFormat.font = "jedi";
+			scoreFormat.font = "a-space";
 			scoreFormat.size = 40;
 			scoreFormat.color = 0xffffff;
 			

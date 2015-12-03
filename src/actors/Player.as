@@ -1,5 +1,6 @@
 package actors 
 {
+	import screens.GameScreen;
 	import utils.Controller;	
 	import flash.events.Event;
 	/**
@@ -10,9 +11,11 @@ package actors
 	{
 		private var controller:Controller;
 		private var speed:Number = 0;
+		private var maxSpeed:Number = 10;
 		
 		public function Player() 
 		{
+			
 			this.addEventListener(Event.ADDED_TO_STAGE, init);		
 		}		
 		private function init(e:Event):void 
@@ -25,11 +28,11 @@ package actors
 		{
 			if (controller.up)
 			{
-				speed = -15;
+				speed = -maxSpeed;
 			}
 			else if(controller.down)
 			{
-				speed = 15;
+				speed = maxSpeed;
 			}else
 			{
 				if (speed > 0) speed--;
@@ -41,7 +44,10 @@ package actors
 				
 				
 			}
+			if (this.y < 0) this.y = 0;
+			if (this.y > stage.stageHeight) this.y = stage.stageHeight;
 			this.y += speed;
+			
 		}
 		
 	}

@@ -21,7 +21,7 @@ package screens
 		private var balls:Array = [];
 		private var paddles:Array = [];
 		private var scoreboard:Scoreboard;
-		static public const GAME_OVER:String = "test";
+		static public const GAME_OVER:String = "Triggered";
 		static public const BALL_BOUNCE:String = "ballBounce";
 		public function GameScreen() 
 		{
@@ -30,7 +30,7 @@ package screens
 		private function init(e:Event):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
-				for (var i:int = 0; i < 2; i++) 
+				for (var i:int = 0; i < 1; i++) 
 			{
 				balls.push(new Ball());
 				addChild(balls[i]);
@@ -43,6 +43,7 @@ package screens
 			paddles.push(new AI());
 			paddles.push(new Player());
 			paddles[0].balls = balls;
+			//paddles[1].maxspeed += 9;
 			for (i = 0; i < 2; i++) 
 			{
 				
@@ -88,13 +89,15 @@ package screens
 			scoreboard.player2 += 1;
 			
 			checkScore();
+		
 		}		
 		private function onRightOut(e:Event):void 
 		{
 			var b:Ball = e.target as Ball;
+			trace (b)
 			b.reset();
+			trace(scoreboard+"sb")
 			scoreboard.player1 += 1;
-			
 			
 			checkScore();
 		}		
