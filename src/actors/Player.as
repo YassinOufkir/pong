@@ -5,7 +5,7 @@ package actors
 	import flash.events.Event;
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author yassin oufkir
 	 */
 	public class Player extends Paddle 
 	{
@@ -41,7 +41,6 @@ package actors
 			}
 			if (controller.fire)
 			{
-				
 				
 			}
 			if (this.y < 0) this.y = 0;

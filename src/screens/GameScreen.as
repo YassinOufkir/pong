@@ -14,14 +14,14 @@ package screens
 	
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author yassin oufkir
 	 */
 	public class GameScreen extends Screen
 	{
 		private var balls:Array = [];
 		private var paddles:Array = [];
 		private var scoreboard:Scoreboard;
-		static public const GAME_OVER:String = "Triggered";
+		static public const GAME_OVER:String = "GameOver";
 		static public const BALL_BOUNCE:String = "ballBounce";
 		public function GameScreen() 
 		{

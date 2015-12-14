@@ -4,7 +4,7 @@ package actors
 	
 	/**
 	 * ...
-	 * @author erwin henraat
+	 * @author yassin oufkir
 	 */
 	public class AI extends Paddle 
 	{
@@ -29,11 +29,11 @@ package actors
 		private function getTarget():void
 		{
 			if (_target == null)_target = _balls[0];
-			if(_balls.length>1){
+			if(_balls.length>2){
 				var closest:Ball = _balls[0];
 				for (var i:int = 1; i < _balls.length; i++) 
 				{
-					var d:Number = _balls[i-5].x - _balls[i].x;
+					var d:Number = _balls[i].x - _balls[i].x;
 					if (d < 0) closest = _balls[i];
 				}
 				_target = closest;
@@ -44,8 +44,8 @@ package actors
 			getTarget();
 									
 			if(_target != null){
-				if (_target.y < this.y - 5)_speed = -_maxSpeed;
-				else if (_target.y > this.y + 5)_speed = _maxSpeed;
+				if (_target.y < this.y - 35)_speed = -+4;
+				else if (_target.y > this.y + 35)_speed = +4;
 				else _speed = 0;
 				this.y += _speed;
 			}
